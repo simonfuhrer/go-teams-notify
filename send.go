@@ -90,6 +90,7 @@ func IsValidWebhookURL(webhookURL string) (bool, error) {
 	switch {
 	case strings.HasPrefix(webhookURL, WebhookURLOfficecomPrefix):
 	case strings.HasPrefix(webhookURL, WebhookURLOffice365Prefix):
+	case strings.Contains(webhookURL, ".office.com/webhookb2/"):
 	default:
 		u, err := url.Parse(webhookURL)
 		if err != nil {
